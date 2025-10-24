@@ -1,0 +1,110 @@
+---
+// Navbar estilo Cal.com con colores AmigIA
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="text-2xl font-bold">
+          <span class="text-[#3bb3c3]">Amig</span><span class="text-[#FF6B6B]">IA</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+          Características
+        </a>
+        <a href="#como-funciona" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+          Cómo funciona
+        </a>
+        <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+          FAQ
+        </a>
+        <a
+          href="#descargar"
+          class="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#3bb3c3] to-[#FF6B6B] rounded-lg hover:opacity-90 transition-opacity"
+        >
+          Descargar
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden p-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+      <div class="py-4 space-y-1">
+        <a href="#features" class="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
+          Características
+        </a>
+        <a href="#como-funciona" class="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
+          Cómo funciona
+        </a>
+        <a href="#faq" class="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
+          FAQ
+        </a>
+        <a
+          href="#descargar"
+          class="block mx-4 mt-2 px-4 py-2 text-sm font-semibold text-center text-white bg-gradient-to-r from-[#3bb3c3] to-[#FF6B6B] rounded-lg hover:opacity-90 transition-opacity"
+        >
+          Descargar
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer para compensar navbar fixed -->
+<div class="h-16"></div>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const navbar = document.getElementById('navbar');
+
+  // Mobile menu toggle
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    button.setAttribute('aria-expanded', menu?.classList.contains('hidden') ? 'false' : 'true');
+  });
+
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      button?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll effect - más transparente cuando scrolleas
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 50) {
+      // Scrolleando - más transparente
+      navbar?.classList.add('bg-white/70');
+      navbar?.classList.remove('bg-white/80');
+    } else {
+      // En top - menos transparente
+      navbar?.classList.add('bg-white/80');
+      navbar?.classList.remove('bg-white/70');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
