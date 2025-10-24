@@ -2,84 +2,103 @@
 // Features Section - 4 características principales según CLAUDE.md
 ---
 
-<section id="features" class="py-20">
-  <div class="container mx-auto px-4">
+<section id="features" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div class="section-header">
-      <h2>¿Qué hace a AmigIA especial?</h2>
-      <p>Combinamos empatía, tecnología y ciencia para brindarte el mejor apoyo emocional.</p>
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        ¿Qué hace a AmigIA especial?
+      </h2>
+      <p class="text-lg text-gray-600">
+        Combinamos empatía, tecnología y ciencia para brindarte el mejor apoyo emocional.
+      </p>
     </div>
 
-    <div class="features-grid grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Main Features Grid -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
 
-      <!-- Feature 1: Chat 24/7 con IA Empática -->
-      <article class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-          </svg>
+      <!-- Feature 1: Chat 24/7 - Grande, destaca más -->
+      <article class="group md:col-span-2 p-8 bg-gradient-to-br from-[#3bb3c3]/5 to-[#3bb3c3]/10 rounded-2xl border border-[#3bb3c3]/20 hover:border-[#3bb3c3]/40 hover:shadow-xl transition-all duration-300">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="w-16 h-16 flex-shrink-0 rounded-xl bg-[#3bb3c3]/20 flex items-center justify-center group-hover:bg-[#3bb3c3]/30 transition-colors">
+            <svg class="w-8 h-8 text-[#3bb3c3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Conversaciones Empáticas 24/7</h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Habla cuando lo necesites. Nuestra IA está entrenada para escuchar con empatía y sin juicios, disponible en cualquier momento del día o la noche.
+            </p>
+          </div>
         </div>
-        <h3>Conversaciones Empáticas 24/7</h3>
-        <p>Habla cuando lo necesites. Nuestra IA está entrenada para escuchar con empatía y sin juicios, disponible en cualquier momento del día o la noche.</p>
       </article>
 
-      <!-- Feature 2: Test DASS-21 Validado -->
-      <article class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Feature 2: DASS-21 -->
+      <article class="group p-6 bg-white rounded-2xl border border-gray-200 hover:border-[#FF6B6B]/40 hover:shadow-lg transition-all duration-300">
+        <div class="w-12 h-12 mb-4 rounded-lg bg-[#FF6B6B]/10 flex items-center justify-center group-hover:bg-[#FF6B6B]/20 transition-colors">
+          <svg class="w-6 h-6 text-[#FF6B6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
           </svg>
         </div>
-        <h3>Evaluación Psicológica DASS-21</h3>
-        <p>Test validado científicamente de 42 preguntas para medir depresión, ansiedad y estrés. Conoce tu estado emocional con precisión.</p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Evaluación Psicológica DASS-21</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Test validado científicamente de 42 preguntas para medir depresión, ansiedad y estrés. Conoce tu estado emocional con precisión.
+        </p>
       </article>
 
-      <!-- Feature 3: Privacidad Total -->
-      <article class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Feature 3: Privacidad -->
+      <article class="group p-6 bg-white rounded-2xl border border-gray-200 hover:border-[#3bb3c3]/40 hover:shadow-lg transition-all duration-300">
+        <div class="w-12 h-12 mb-4 rounded-lg bg-[#3bb3c3]/10 flex items-center justify-center group-hover:bg-[#3bb3c3]/20 transition-colors">
+          <svg class="w-6 h-6 text-[#3bb3c3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
           </svg>
         </div>
-        <h3>100% Privado y Seguro</h3>
-        <p>Datos encriptados de extremo a extremo. Almacenamiento local. No compartimos tu información con nadie. Tu bienestar es confidencial.</p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">100% Privado y Seguro</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Datos encriptados de extremo a extremo. Almacenamiento local. No compartimos tu información con nadie. Tu bienestar es confidencial.
+        </p>
       </article>
 
-      <!-- Feature 4: Seguimiento Personalizado -->
-      <article class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-          </svg>
+      <!-- Feature 4: Seguimiento -->
+      <article class="group md:col-span-2 p-6 bg-gradient-to-br from-[#FF6B6B]/5 to-[#FF6B6B]/10 rounded-2xl border border-[#FF6B6B]/20 hover:border-[#FF6B6B]/40 hover:shadow-lg transition-all duration-300">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 flex-shrink-0 rounded-lg bg-[#FF6B6B]/20 flex items-center justify-center group-hover:bg-[#FF6B6B]/30 transition-colors">
+            <svg class="w-6 h-6 text-[#FF6B6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Seguimiento de Bienestar</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Reportes personalizados, gráficos de progreso y análisis de tendencias. Observa tu evolución emocional a lo largo del tiempo.
+            </p>
+          </div>
         </div>
-        <h3>Seguimiento de Bienestar</h3>
-        <p>Reportes personalizados, gráficos de progreso y análisis de tendencias. Observa tu evolución emocional a lo largo del tiempo.</p>
       </article>
 
     </div>
 
-    <!-- USP adicionales -->
-    <div class="benefits-row">
-      <div class="benefit">
-        <svg class="benefit-icon" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+    <!-- Additional Benefits -->
+    <div class="grid sm:grid-cols-2 gap-4 pt-8">
+      <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100">
+        <svg class="w-5 h-5 text-[#3bb3c3] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
         </svg>
-        <h4>Completamente Gratis</h4>
-        <p>Sin costos ocultos, sin suscripciones</p>
+        <div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Sin Juicios</h4>
+          <p class="text-gray-600 text-sm">Espacio seguro para expresarte libremente</p>
+        </div>
       </div>
-      <div class="benefit">
-        <svg class="benefit-icon" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+      <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100">
+        <svg class="w-5 h-5 text-[#3bb3c3] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
         </svg>
-        <h4>Sin Juicios</h4>
-        <p>Espacio seguro para expresarte libremente</p>
-      </div>
-      <div class="benefit">
-        <svg class="benefit-icon" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-        </svg>
-        <h4>Fácil de Usar</h4>
-        <p>Interfaz intuitiva y accesible para todos</p>
+        <div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Fácil de Usar</h4>
+          <p class="text-gray-600 text-sm">Interfaz intuitiva y accesible para todos</p>
+        </div>
       </div>
     </div>
 

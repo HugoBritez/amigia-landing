@@ -1,0 +1,100 @@
+---
+// CTA Section - Intermediate conversion point with email capture
+---
+
+<section id="cta" class="py-20 bg-gradient-to-br from-[#3bb3c3]/10 via-white to-[#FF6B6B]/10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+      <div class="p-8 sm:p-12 text-center">
+
+        <!-- Headline -->
+        <div class="inline-block px-4 py-1.5 bg-[#3bb3c3]/10 text-[#3bb3c3] text-sm font-semibold rounded-full mb-4">
+          Beta Testing • Acceso Anticipado
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          ¿Querés ser parte de la beta?
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          Únete a nuestro programa de beta testing y sé uno de los primeros en probar AmigIA. Ayúdanos a mejorar mientras cuidamos tu bienestar emocional.
+        </p>
+
+        <!-- Benefits Grid -->
+        <div class="grid sm:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
+          <div class="flex items-center gap-2 text-gray-700">
+            <svg class="w-5 h-5 text-[#3bb3c3] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-sm font-medium">Acceso anticipado</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-700">
+            <svg class="w-5 h-5 text-[#3bb3c3] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-sm font-medium">Ayúdanos a mejorar</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-700">
+            <svg class="w-5 h-5 text-[#3bb3c3] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-sm font-medium">Soporte directo</span>
+          </div>
+        </div>
+
+        <!-- Beta Signup Form -->
+        <form class="max-w-md mx-auto" id="beta-signup-form">
+          <div class="space-y-3">
+            <input
+              type="text"
+              name="name"
+              placeholder="Tu nombre"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3bb3c3] focus:border-transparent outline-none transition-all"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="tu@email.com"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3bb3c3] focus:border-transparent outline-none transition-all"
+            />
+            <button
+              type="submit"
+              class="w-full px-6 py-4 bg-gradient-to-r from-[#3bb3c3] to-[#FF6B6B] text-white font-semibold rounded-lg hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+            >
+              Quiero ser Beta Tester
+            </button>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">
+            Te contactaremos pronto con los detalles para descargar la app. <br class="hidden sm:block"/>
+            <span class="text-[#3bb3c3] font-medium">¡Gracias por ayudarnos a crecer!</span>
+          </p>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Beta signup form handler (placeholder - integrate with your backend)
+  const form = document.getElementById('beta-signup-form');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const name = formData.get('name');
+    const email = formData.get('email');
+
+    // TODO: Replace with actual API endpoint for beta signups
+    console.log('Beta signup:', { name, email });
+
+    // Show success message (you can customize this)
+    alert('¡Gracias por unirte a la beta! Te contactaremos pronto con los detalles de acceso.');
+    (e.target as HTMLFormElement).reset();
+
+    // TODO: Integrate with backend API or email service (Airtable, Google Sheets, Mailchimp, etc.)
+    // Example: Send to Airtable, add to waitlist, trigger welcome email, etc.
+  });
+</script>
