@@ -1,0 +1,247 @@
+---
+// Product Showcase - Carrusel infinito horizontal con efecto 3D
+import Chat from '../assets/Chat.png';
+import Configuracion from '../assets/Configuración.png';
+import Historias from '../assets/Historias.png';
+import Inicio from '../assets/Inicio.png';
+import Menu from '../assets/Menú.png';
+import MomentosAmigia from '../assets/Momentos-Amigia.png';
+import Reflexiones1 from '../assets/Reflexiones-1.png';
+import Reflexiones2 from '../assets/Reflexiones-2.png';
+import Registro from '../assets/Registro.png';
+import { Image } from 'astro:assets';
+
+const screenshots = [
+  { src: Inicio, alt: 'Pantalla de inicio de AmigIA', title: 'Inicio', description: 'Dashboard principal con tus estadísticas de bienestar' },
+  { src: Chat, alt: 'Chat con AmigIA', title: 'Conversación', description: 'Habla libremente sobre lo que sientes' },
+  { src: Reflexiones1, alt: 'Reflexiones diarias', title: 'Reflexiones', description: 'Insights personalizados sobre tu progreso' },
+  { src: Historias, alt: 'Historias de bienestar', title: 'Historias', description: 'Contenido inspirador adaptado a ti' },
+  { src: MomentosAmigia, alt: 'Momentos con AmigIA', title: 'Momentos', description: 'Registra y recuerda tus mejores momentos' },
+  { src: Reflexiones2, alt: 'Más reflexiones', title: 'Insights', description: 'Análisis profundo de tu bienestar emocional' },
+  { src: Menu, alt: 'Menú de navegación', title: 'Menú', description: 'Accede a todas las funcionalidades' },
+  { src: Configuracion, alt: 'Configuración de la app', title: 'Configuración', description: 'Personaliza tu experiencia' },
+  { src: Registro, alt: 'Registro en AmigIA', title: 'Registro', description: 'Empieza en menos de 30 segundos' },
+];
+---
+
+<section id="app-showcase" class="py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Conoce la app por dentro
+      </h2>
+      <p class="text-lg text-gray-600">
+        Diseñada para que te sientas cómodo desde el primer momento. Simple, intuitiva y enfocada en tu bienestar.
+      </p>
+    </div>
+
+    <!-- Carrusel Container -->
+    <div class="relative">
+      <!-- Gradientes fade a los lados -->
+      <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+
+      <!-- Carousel wrapper con perspectiva -->
+      <div class="carousel-wrapper" style="perspective: 1500px;">
+        <div class="carousel-track flex gap-6" id="carousel-track">
+          <!-- Duplicamos las imágenes para el efecto infinito -->
+          {[...screenshots, ...screenshots].map((screenshot, index) => (
+            <div class="carousel-item flex-shrink-0 group">
+              <!-- Mockup de iPhone -->
+              <div class="relative">
+                <!-- Sombra del teléfono -->
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-gray-900/5 rounded-[2.5rem] blur-2xl transform translate-y-8"></div>
+
+                <!-- iPhone Frame -->
+                <div class="relative bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-y-5">
+                  <!-- Notch -->
+                  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-3xl z-10"></div>
+
+                  <!-- Screen -->
+                  <div class="relative rounded-[2rem] overflow-hidden bg-white">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                      width={280}
+                      height={606}
+                    />
+                  </div>
+                </div>
+
+                <!-- Info overlay on hover -->
+                <div class="absolute -bottom-20 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-gray-200 mx-2">
+                    <h3 class="font-bold text-gray-900 mb-1">{screenshot.title}</h3>
+                    <p class="text-sm text-gray-600">{screenshot.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Controls (opcional - pueden ser útiles) -->
+      <div class="flex justify-center gap-4 mt-12">
+        <button
+          id="carousel-prev"
+          class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
+          aria-label="Anterior"
+        >
+          <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button
+          id="carousel-next"
+          class="w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
+          aria-label="Siguiente"
+        >
+          <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Feature highlights debajo del showcase -->
+    <div class="mt-24 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="text-center p-6">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#3bb3c3]/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#3bb3c3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Interfaz intuitiva</h3>
+        <p class="text-gray-600 text-sm">Diseñada para que te sientas cómodo y seguro desde el primer momento</p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#FF6B6B]/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#FF6B6B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Seguimiento personalizado</h3>
+        <p class="text-gray-600 text-sm">Visualiza tu progreso emocional con gráficos y reportes detallados</p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-[#3bb3c3]/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#3bb3c3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Disponible en móviles</h3>
+        <p class="text-gray-600 text-sm">iOS y Android. Lleva tu bienestar emocional a donde vayas</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0 120px 0; /* Espacio extra abajo para los tooltips */
+  }
+
+  .carousel-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+  }
+
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  .carousel-item {
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  /* Efecto 3D sutil en hover */
+  .carousel-item:hover {
+    transform: translateZ(20px);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-280px * 9 - 24px * 9)); /* width * items + gap * items */
+    }
+  }
+
+  /* Responsive: más lento en mobile */
+  @media (max-width: 768px) {
+    .carousel-track {
+      animation-duration: 50s;
+    }
+
+    .carousel-item {
+      width: 220px;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-220px * 9 - 24px * 9));
+      }
+    }
+  }
+</style>
+
+<script>
+  // Controles del carrusel
+  const track = document.getElementById('carousel-track');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  let scrollPosition = 0;
+  const scrollAmount = 300; // px a mover por click
+
+  prevBtn?.addEventListener('click', () => {
+    scrollPosition += scrollAmount;
+    if (track) {
+      track.style.animation = 'none';
+      track.style.transform = `translateX(${scrollPosition}px)`;
+
+      // Restart animation after manual control
+      setTimeout(() => {
+        track.style.animation = '';
+      }, 1000);
+    }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    scrollPosition -= scrollAmount;
+    if (track) {
+      track.style.animation = 'none';
+      track.style.transform = `translateX(${scrollPosition}px)`;
+
+      // Restart animation after manual control
+      setTimeout(() => {
+        track.style.animation = '';
+      }, 1000);
+    }
+  });
+
+  // Pausar en hover para accesibilidad
+  track?.addEventListener('mouseenter', () => {
+    if (track) track.style.animationPlayState = 'paused';
+  });
+
+  track?.addEventListener('mouseleave', () => {
+    if (track) track.style.animationPlayState = 'running';
+  });
+</script>

@@ -78,23 +78,69 @@
 </section>
 
 <script>
-  // Beta signup form handler (placeholder - integrate with your backend)
+  // Beta signup form handler - Google Sheets integration
   const form = document.getElementById('beta-signup-form');
+  const button = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const originalButtonText = button?.textContent || '';
+
+  // IMPORTANTE: Reemplaza esta URL con la que obtuviste de Google Apps Script
+  const SHEETS_API_URL = import.meta.env.PUBLIC_SHEETS_API_URL || 'TU_URL_AQUI';
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const name = formData.get('name');
-    const email = formData.get('email');
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
 
-    // TODO: Replace with actual API endpoint for beta signups
-    console.log('Beta signup:', { name, email });
+    // Cambiar estado del botón
+    if (button) {
+      button.disabled = true;
+      button.textContent = 'Enviando...';
+    }
 
-    // Show success message (you can customize this)
-    alert('¡Gracias por unirte a la beta! Te contactaremos pronto con los detalles de acceso.');
-    (e.target as HTMLFormElement).reset();
+    try {
+      // Enviar a Google Sheets
+      const response = await fetch(SHEETS_API_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Importante para Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          userAgent: navigator.userAgent,
+          timestamp: new Date().toISOString()
+        })
+      });
 
-    // TODO: Integrate with backend API or email service (Airtable, Google Sheets, Mailchimp, etc.)
-    // Example: Send to Airtable, add to waitlist, trigger welcome email, etc.
+      // Como usamos 'no-cors', no podemos leer la respuesta
+      // Asumimos éxito si no hay error
+      console.log('✅ Registro enviado a Google Sheets:', { name, email });
+
+      // Mostrar mensaje de éxito
+      alert('¡Gracias por unirte a la beta! 🎉\n\nTe contactaremos pronto con los detalles de acceso.');
+
+      // Limpiar formulario
+      (e.target as HTMLFormElement).reset();
+
+      // Opcional: Enviar evento de conversión a analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'beta_signup', {
+          'event_category': 'engagement',
+          'event_label': 'Beta Tester Signup'
+        });
+      }
+
+    } catch (error) {
+      console.error('❌ Error al enviar registro:', error);
+      alert('Hubo un problema al enviar tu registro. Por favor, intenta nuevamente o contacta a hola@amigia.app');
+    } finally {
+      // Restaurar botón
+      if (button) {
+        button.disabled = false;
+        button.textContent = originalButtonText;
+      }
+    }
   });
 </script>

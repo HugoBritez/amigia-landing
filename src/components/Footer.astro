@@ -2,85 +2,49 @@
 // Footer con disclaimer legal obligatorio
 ---
 
-<footer class="footer">
-
-  <!-- Sección de descarga CTA -->
-  <section id="descargar" class="download-section">
-    <div class="container mx-auto px-4">
-      <div class="download-content">
-        <h2>Descarga AmigIA hoy</h2>
-        <p>Tu bienestar emocional está a un clic de distancia. Próximamente en App Store y Google Play.</p>
-
-        <!-- Badges de tiendas -->
-        <div class="store-badges">
-          <a href="#" class="store-badge" aria-label="Descargar en App Store">
-            <svg class="store-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path>
-            </svg>
-            <div>
-              <div class="store-label">Próximamente en</div>
-              <div class="store-name">App Store</div>
-            </div>
-          </a>
-
-          <a href="#" class="store-badge" aria-label="Descargar en Google Play">
-            <svg class="store-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"></path>
-            </svg>
-            <div>
-              <div class="store-label">Próximamente en</div>
-              <div class="store-name">Google Play</div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Newsletter signup -->
-        <div class="newsletter">
-          <p>Recibe notificaciones cuando la app esté disponible</p>
-          <form class="newsletter-form" action="#" method="post">
-            <input
-              type="email"
-              name="email"
-              placeholder="tu@email.com"
-              required
-              aria-label="Tu email"
-            />
-            <button type="submit" class="btn btn-secondary">
-              Suscribirse
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer class="bg-gray-900 text-gray-300">
 
   <!-- Footer principal -->
-  <div class="footer-main">
-    <div class="container mx-auto px-4">
-      <div class="footer-grid grid md:grid-cols-4 gap-8">
+  <div class="border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
 
         <!-- Columna 1: Info de empresa -->
-        <div class="footer-col md:col-span-2">
-          <h3 class="footer-logo">AmigIA</h3>
-          <p class="footer-description">
-            Tu compañera de bienestar emocional impulsada por IA. Apoyo emocional accesible para todos. Hecho en Paraguay 🇵🇾
+        <div class="md:col-span-2 space-y-4">
+          <h3 class="text-2xl font-bold">
+            <span class="text-[#3bb3c3]" style="font-family: 'Nunito', sans-serif;">Amig</span><span class="text-[#FF6B6B]" style="font-family: 'Raleway', sans-serif;">IA</span>
+          </h3>
+          <p class="text-gray-400 leading-relaxed max-w-md">
+            Tu compañera de bienestar emocional impulsada por IA. Apoyo emocional accesible para todos. 
           </p>
 
           <!-- Redes sociales -->
-          <div class="social-links">
-            <a href="#" aria-label="Instagram" class="social-link">
-              <svg fill="currentColor" viewBox="0 0 24 24">
+          <div class="flex gap-3 pt-2">
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-[#3bb3c3] transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"></path>
                 <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
               </svg>
             </a>
-            <a href="#" aria-label="Twitter" class="social-link">
-              <svg fill="currentColor" viewBox="0 0 24 24">
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-[#3bb3c3] transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
               </svg>
             </a>
-            <a href="#" aria-label="LinkedIn" class="social-link">
-              <svg fill="currentColor" viewBox="0 0 24 24">
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-[#3bb3c3] transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
               </svg>
             </a>
@@ -88,43 +52,45 @@
         </div>
 
         <!-- Columna 2: Enlaces -->
-        <div class="footer-col">
-          <h4 class="footer-heading">Enlaces</h4>
-          <ul class="footer-links">
-            <li><a href="#nosotros">Sobre AmigIA</a></li>
-            <li><a href="#features">Características</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="mailto:hola@amigia.app">Contacto</a></li>
-            <li><a href="mailto:soporte@amigia.app">Soporte</a></li>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Enlaces</h4>
+          <ul class="space-y-2">
+            <li><a href="#nosotros" class="hover:text-[#3bb3c3] transition-colors">Sobre AmigIA</a></li>
+            <li><a href="#features" class="hover:text-[#3bb3c3] transition-colors">Características</a></li>
+            <li><a href="#faq" class="hover:text-[#3bb3c3] transition-colors">FAQ</a></li>
+            <li><a href="mailto:hola@amigia.app" class="hover:text-[#3bb3c3] transition-colors">Contacto</a></li>
+            <li><a href="mailto:soporte@amigia.app" class="hover:text-[#3bb3c3] transition-colors">Soporte</a></li>
           </ul>
         </div>
 
         <!-- Columna 3: Legal -->
-        <div class="footer-col">
-          <h4 class="footer-heading">Legal</h4>
-          <ul class="footer-links">
-            <li><a href="/privacidad">Política de Privacidad</a></li>
-            <li><a href="/terminos">Términos de Servicio</a></li>
-            <li><a href="/cookies">Política de Cookies</a></li>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="/privacidad" class="hover:text-[#3bb3c3] transition-colors">Política de Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-[#3bb3c3] transition-colors">Términos de Servicio</a></li>
+            <li><a href="/cookies" class="hover:text-[#3bb3c3] transition-colors">Política de Cookies</a></li>
           </ul>
         </div>
 
       </div>
 
       <!-- DISCLAIMER LEGAL OBLIGATORIO -->
-      <div class="disclaimer">
-        <div class="disclaimer-icon" aria-hidden="true">
-          <svg fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <div class="disclaimer-content">
-          <strong>Aviso Importante:</strong> AmigIA utiliza inteligencia artificial para proporcionar apoyo emocional y no sustituye el diagnóstico, consejo médico o tratamiento profesional. Si experimentas una crisis de salud mental, contacta inmediatamente a servicios de emergencia o líneas de ayuda especializadas.
+      <div class="p-6 bg-gray-800/50 rounded-xl border border-gray-700 mb-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="text-sm leading-relaxed">
+            <strong class="text-white">Aviso Importante:</strong> AmigIA utiliza inteligencia artificial para proporcionar apoyo emocional y no sustituye el diagnóstico, consejo médico o tratamiento profesional. Si experimentas una crisis de salud mental, contacta inmediatamente a servicios de emergencia o líneas de ayuda especializadas.
+          </div>
         </div>
       </div>
 
       <!-- Copyright -->
-      <div class="copyright">
+      <div class="pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
         <p>© {new Date().getFullYear()} AmigIA. Todos los derechos reservados.</p>
       </div>
 
